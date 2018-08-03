@@ -1,0 +1,98 @@
+
+{{!-- <header class="intro-header" >
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>Login</h1>
+          <hr class="small">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      {{#each error}}
+        <div class="alert alert-danger">{{this}}</div>
+      {{/each}}
+      <form name="login" action="/login" method="post">
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Email Address</label>
+            <input type="username" class="form-control" placeholder="Username" name="username" required data-validation-required-message="Please enter your username.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password" required data-validation-required-message="Please enter your password.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-xs-12">
+              <button type="submit" class="btn btn-default">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> --}}
+
+<body id="loginSignupPage">
+<div class="container">
+      <div class="row main">
+        <div class="panel-heading">
+                 <div class="panel-title text-center">
+                    <h1 class="title" id = "test"><a href="/">Zamora's</a></h1>
+                    <hr />
+                  </div>
+              </div> 
+        <div class="main-loginSignup main-center">
+          <form name = "login" class="form-horizontal" method="post" action="/login">
+            
+            <div class="form-group">
+              <label for="username" class="cols-sm-2 control-label">Username</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="username" id="username"  placeholder="Username"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="password" class="form-control" name="password" id="password"  placeholder="Password"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group ">
+              <button type="submit" class="btn btn-primary btn-lg btn-block loginSignup-button">Login</button>
+            </div>
+            <div class="loginSignup-register">
+                    <p>Not a member? <a href="/signup"> Signup</a>
+                 </div>
+
+              {{#if anError}}
+                <script type="text/javascript">
+                    alert("Incorrect username and/or password");
+                </script>
+              {{/if}}
+
+              
+
+          </form>
+        </div>
+      </div>
+    </div>
+</body>

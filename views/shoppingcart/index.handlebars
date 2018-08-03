@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Zamora's</title>
+	  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+  	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="css\index.css">
+  	<link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
+  	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body id="shoppingCartPage">
+
+
+<div class="shoppingCartHeading">
+<h1><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Shopping Cart</h1>
+<hr class="style-eight">
+</div>
+
+<div class="container">
+	<table id="cart" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:50%">Product</th>
+							<th style="width:10%">Price</th>
+							<th style="width:8%">Quantity</th>
+							<th style="width:22%" class="text-center">Subtotal</th>
+							<th style="width:10%"></th>
+						</tr>
+					</thead>
+					{{#each items}}
+					<tbody> 
+						<tr>
+
+							<td data-th="Product">
+								<div class="row">
+									<div class="col-sm-2 hidden-xs"><img id ="pictureImages" src="/{{this.imgsrc}}"  alt={{picturesArr}} class="img-responsive"/></div>
+									<div class="col-sm-10">
+										<h4 class="nomargin">{{this.ProductName}}</h4>
+										<p></p>
+									</div>
+								</div>
+							</td>
+							<td data-th="Price"> {{this.Cost}}</td>
+                            <form class = "form-inline" action = "/shoppingcart/update" method = "post">
+							<td data-th="Quantity">
+							{{!-- {{#if quantity}} --}}
+								<input type="number" class="form-control text-center" name = "quantity" value = "{{this.quantity}}"
+
+							{{!-- {{else}} --}}
+								{{!-- <input type="number" class="form-control text-center" name = "quantity" value="1"> --}}
+						
+							{{!-- {{/if}} --}}
+							
+							</td>
+							<td data-th="Subtotal" class="text-center">{{this.subtotal}}</td>
+						
+							<td class="actions" data-th="">
+								<button class="btn btn-info btn-sm" name = "update" value = "{{this.Product_id}}"
+								 type = "submit"><i class="fa fa-refresh"></i></button>
+							</form>
+
+								 <form class="form-inline" action="/shoppingcart/delete" method="post"> 
+								<button class="btn btn-danger btn-sm" name = "delete" value = "{{this.Product_id}}" type = "submit"><i class="fa fa-trash-o"></i></button>
+								
+							</td>
+							</form>
+						</tr>
+					</tbody>
+					{{/each}}
+					
+					<tfoot>
+						<tr class="visible-xs">
+							<td class="text-center"><strong>Total 500.99</strong></td>
+						</tr>
+						<tr>
+							<td><a href="/shoppingpage" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+							<td colspan="2" class="hidden-xs"></td>
+							<td class="hidden-xs text-center"><strong>Total {{total}}</strong></td>
+							<td><a href="/checkout" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+						</tr>
+					</tfoot>
+				</table>
+
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+
+ <body id="loginSignupPage">
+<div class="container">
+      <div class="row main">
+        <div class="panel-heading">
+                 <div class="panel-title text-center">
+                    <h1 class="title"><a href="/">Zamora's</a></h1>
+                    <hr />
+                  </div>
+              </div> 
+        <div class="main-loginSignup main-center">
+          <form name = 'signup' class="form-horizontal" method="post" action="/signup">
+            
+            <div class="form-group">
+              <label for="firstname" class="cols-sm-2 control-label">First Name</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="firstname" id="firstname"  placeholder="First Name"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lastname" class="cols-sm-2 control-label">Last Name</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="lastname" id="lastname"  placeholder="Last Name"/>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="street" class="cols-sm-2 control-label">Street</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-subway fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="street" id="street"  placeholder="Street"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="city" class="cols-sm-2 control-label">City</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-subway fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="city" id="city"  placeholder="City"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="state" class="cols-sm-2 control-label">State</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-subway fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="state" id="state"  placeholder="State i.e. (NY)"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="zipcode" class="cols-sm-2 control-label">Zip Code</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-subway fa" aria-hidden="true"></i></span>
+                  <input type="number" class="form-control" name="zipcode" id="zipcode"  placeholder="Zipcode"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="username" class="cols-sm-2 control-label">New Username</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user-circle-o fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="username" id="username"  placeholder="Username"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">New Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="password" class="form-control" name="password" id="password"  placeholder="Password"/>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group ">
+              <button type="submit" class="btn btn-primary btn-lg btn-block loginSignup-button">Signup</button>
+            </div>
+            <div class="loginSignup-register">
+                    <p>Already a member? <a href="/login"> Login</a>
+                 </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</body>
